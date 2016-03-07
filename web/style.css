@@ -1,0 +1,199 @@
+body {
+	min-width: 980px;
+	background-color: #f4f4f4;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+a:hover {
+	color:red;
+}
+
+ul {
+	list-style: none;
+}
+
+#top {
+	width: 100%;
+	height: 100px;
+	background-color: #bfa64c;
+	color: #fff;
+}
+
+.top-x {
+	width: 980px;
+	height: 50px;
+	margin: 0 auto;
+}
+
+.top-x p {
+	float: left;
+	font-size: 14px;
+}
+
+.top-x ul {
+	float: right;
+}
+
+.top-x li {
+	float: left;
+	margin-right: 10px;
+	font-size: 12px;
+}
+
+.top-y {
+	position: relative;
+	width: 980px;
+	height: 50px;
+	margin: 0 auto;
+}
+
+.top-y ul {
+	float: right;
+	margin-bottom: 5px;
+}
+
+.top-y li {
+	float: left;
+	margin-left: 50px;
+	font-size: 14px;
+}
+
+.logo{
+	position: absolute;
+	bottom: 5px;
+	float: left;
+	font-size: 30px;
+}
+
+.banner img {
+	width: 100%;
+}
+
+/*下面是主体部分*/
+
+.main-center {
+	position: relative;
+	width: 980px;
+	margin: 0 auto;
+}
+
+.main-content {
+	width: 710px;
+	float: left;
+}
+
+.main-post {
+	position: relative;
+	margin-top: 10px;
+	padding: 20px;
+	font-size: 12px;
+	line-height: 24px;
+	background-color: #fff;
+	margin-bottom: 10px;
+}
+
+.tag {
+	position: absolute;
+	left: -50px;
+	width: 50px;
+	text-align: center;
+	color: #fff;
+}
+
+.tag-date {
+	height: 30px;
+	background-color: #f8cc09;
+	line-height: 30px;
+}
+
+.tag-type {
+	height: 30px;
+	background-color: #2f1400;
+	line-height: 30px;
+}
+
+.main-post section {
+	float: right;
+	margin-right: 10px;
+	color: #7a7a7a;
+}
+
+.fanye {
+	width: 710px;
+	text-align: center;
+	margin-bottom: 200px;
+}
+
+.fanye-y {
+	display: inline-block;
+}
+
+.fanye-x {
+	float: left;
+	margin-right: 20px;
+	background-color: #fff;
+	width: 50px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+}
+
+.fanye-z {
+	float: left;
+	margin-right: 20px;
+	background-color: #753100;
+	width: 50px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color: #fff;
+}
+
+/*以下是侧边栏*/
+
+.sidebar {
+	float: right;
+	width: 260px;
+	background-color: #fff;
+	margin-top: 10px;
+}
+
+.sidebar-nav {
+
+}
+
+.sidebar-x {
+	height: 50px;
+	padding-left: 20px;
+	border-width: 0 0 1px 5px;
+    border-style: solid;
+	border-color: #f8cc09;
+	line-height: 50px;
+	color: #000;
+}
+
+.sidebar-x:hover {
+	border-left-color: #2f1400;
+	color: #000;
+}
+
+/*以下是底部*/
+
+#footer {
+    clear: both;
+    height: 300px;
+    width: 100%;
+    background-color: #2f1400;
+}
+
+#footer p {
+	padding-top: 280px;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+}
+
