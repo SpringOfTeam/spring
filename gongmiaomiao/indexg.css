@@ -2,7 +2,7 @@
 
 .head, .content, .footer{ width: 1200px;
 		
-		border:1px solid black ; }
+		}
 
 .head {height: 80px;
 	   background-color: #C40000;}
@@ -10,19 +10,19 @@
 
 
 .text-logo {float: left;
-			border:1px solid black ; 
+			
 			margin-top: 40px;
 			color: white;
 			font-size: 28px;
 			}
 .head-right {width: 900px;
 			float: right;
-			border:1px solid black ; 
+			
 			margin-top: 30px;
 			position: relative;
 			}
 
-.head-right .nav {border:1px solid black;
+.head-right .nav {
 				position: absolute;
 				left: 500px;
 				color: white;
@@ -32,7 +32,7 @@
 						padding-left: 28px;}
 
 .head-right .img-logo {float: right;
-						border:1px solid black;
+						
 						margin-top: 14px;
 						margin-right: 10px;}
 .text-logo{margin-left: 110px;}
@@ -49,7 +49,7 @@
 				}
 .content-top .text {width: 300px;
 					height: 140px;
-					border:1px solid black;
+					
 					margin-left: 790px;
 					margin-top: 368px;
 					color: black;
@@ -64,7 +64,7 @@
 .content-middle{background-color: #F0F0F0;}
 .content-middle-one {width: 320px;
 					height: 360px;
-					border:1px solid black ;
+					
 					background-color: white;
 					float: left;
 					margin-top: 10px;
@@ -78,7 +78,7 @@
 #product-thr  {margin-left:10px; }
 .product-des {width: 270px;
 			 height: 180px;
-			 border:1px solid black ;
+			 
 			 font-size: 12px;
 			 margin-left: 25px;
 			 text-indent: 10px;
@@ -109,7 +109,7 @@
 
 .footer-one, .footer-two, .footer-three{
 					width: 1200px;
-					border:1px solid black ;
+					
 }
 
 .footer-one {height: 30px;
