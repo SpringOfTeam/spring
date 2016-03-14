@@ -7,12 +7,12 @@ Web文件夹：测试文档<br>
 林明
 demo：http://ming-lin.github.io/<br>
 代码地址：spring个人分支<br>
-完成进度：00-00-00-00<br>
+完成进度：00-00<br>
 
 汪伟
 demo：http://ww121314156.github.io/<br>
 代码地址：spring个人分支<br>
-完成进度：00-00-00<br>
+完成进度：00-00<br>
 
 龚苗
 demo：http://gongmiaomiao.github.io/<br>
