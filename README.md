@@ -20,8 +20,8 @@ demo：http://ww121314156.github.io/taskone/01.html<br>
 
 龚苗<br>
 demo：http://gongmiaomiao.github.io/<br>
-代码地址：https://github.com/SpringOfTeam/spring/tree/gongmiaomiao/gongmiaomiao/01<br>
-完成进度：01-00<br>
+代码地址：https://github.com/SpringOfTeam/spring/tree/gongmiaomiao/gongmiaomiao<br>
+完成进度：01-02<br>
 
 彭弛<br>
 demo：http://scat-master.github.io/<br>
