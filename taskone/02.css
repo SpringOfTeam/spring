@@ -1,0 +1,221 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-width: 1000px;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+#header {
+	width: 1300px;
+	height: 80px;
+	background-color: #333;
+	line-height: 80px;
+}
+
+#nav ul {
+	float: right;
+	margin-right: 10px;
+}
+
+#nav li {
+	float: left;
+	margin-right: 20px;
+}
+
+#nav a {
+	font-size: 12px;
+}
+
+.nav-four a {
+	color: #7393a0;
+}
+
+/*以上是头部*/
+
+.main {
+	width: 1300px;
+	background-color: #dedede;
+	padding-top: 20px;
+	padding-bottom: 50px;
+}
+
+.article {
+	margin: 0 auto 20px;
+	padding: 20px;
+	width: 1200px;
+	background-color: #fff;
+	font-size: 14px;
+	line-height: 28px;
+}
+
+.main a {
+	color: blue;
+}
+
+h1 {
+	font-size: 28px;
+	margin-bottom: 20px;
+}
+
+h2 {
+	font-size: 18px;
+	color: #646464;
+	margin-bottom: 10px;
+}
+
+span {
+	font-size: 12px;
+	color: #b79579;
+	margin-bottom: 10px;
+}
+
+.main ul {
+	list-style: none;
+}
+
+/*以下是图片部分*/
+
+.pic {
+	margin: 0 auto 20px;
+	padding: 20px;
+	width: 1200px;
+	background-color: #fff;
+}
+
+.pic figure {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid #646464;
+    margin: 0 0 20px 30px;
+    text-align: center;
+
+}
+
+.pic figcaption {
+	margin: 10px auto;
+}
+
+.pic img {
+
+	width: 150px;
+	height: 150px;
+}
+
+/*以下是表格部分*/
+
+.tab {
+	width: 1200px;
+	background-color: #fff;
+	margin: 0 auto 20px;
+	padding: 20px;
+}
+
+.tab ol {
+	margin: 20px auto 20px 40px;
+	font-weight: bold;
+}
+
+.tab table {
+	border-collapse:collapse;
+	font-size: 14px;
+	margin: 0 auto;
+
+}
+
+.main th,td {
+	border: 1px solid #ccc;
+}
+
+.main td {
+	padding: 5px;
+}
+
+.th01 {
+	padding: 5px;
+	width: 400px;
+	background-color: #333;
+	border: 1px;
+	color: #fff;
+}
+
+.th03 {
+	width: 200px;
+	background-color: #333;
+	color: #fff;
+}
+
+.td02 {
+	background-color: #ccc;
+}
+
+
+/*以下是提交的表单*/
+
+aside {
+	width: 1200px;
+	background-color: #fff;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+aside span {
+    color: #000;
+}
+
+aside h3 {
+	font-size: 28;
+	color: #000;
+	border-left: 3px solid #ccc;
+	padding-left: 10px;
+}
+
+.input label,.select span,.describe label {
+	display: inline-block;
+	width: 30%;
+	text-align: right;
+	font-size: 12px;
+}
+
+aside p {
+	margin-left: 370px;
+	font-size: 12px;
+	color: #ccc;
+
+}
+
+aside div {
+	margin-top: 20px;
+}
+
+textarea{
+	vertical-align: top;
+}
+
+input[type="submit"] {
+	margin-top: 10px;
+	width: 100%;
+	background-color:#3355d0;
+	border-radius: 7px;
+	height:40px;
+	color: white;
+}
+
+
+/*以下是底部*/
+
+footer {
+	width: 1300px;
+	background-color: black;
+	height: 80px;
+	color: #fff;
+	text-align: center;
+	line-height: 80px;
+}
