@@ -1,0 +1,175 @@
+
+*		{
+		margin:0;
+		padding: 0;
+		list-style: none;
+		}
+
+body, header, .content, footer,article, .aside, .picture, .table{
+		width: 1280px;
+		}
+article, .aside, .picture{
+		box-shadow: 2px 2px #434348;
+}
+body    {
+		height: 3116px;
+		background: #BBB7B7;
+		margin: 0 auto;
+		}
+
+header	{
+		height: 60px;
+		background: #3F4042;
+		}
+#baidu {
+		float: left;
+		margin-left: 40px;
+		}   
+
+nav 	{
+		float: right;
+		font-size: 13px;
+		line-height: 60px;
+		}
+nav ul li{
+		float: left;
+		margin-right: 20px;
+		list-style-type: disc;
+		}
+nav ul li a {
+		text-decoration: none;
+		color: #BBB7B7;
+		}
+nav li a:link {
+		color: #FF0000;
+		}  										/*鼠标经过要变色 link-visited-hover-active*/
+nav li a:visited {
+		color: #BBB7B7;
+		} 
+nav li a:hover {
+		color: white;
+		}	
+
+.content{height: 3000px;
+		}
+article, .aside, .picture,.article-three {
+		width: 1240px;
+		margin: 20px;
+		background: white;}
+
+article, .aside{
+		height: 550px;
+		}
+article h3,.aside h4,.picture h2{
+		padding:25px 0px 20px 20px;
+		}
+
+article h4,.writer {
+		color: #858A93;
+		padding:0px 0px 10px 20px;
+		}
+article p,article img, article ul, article ol{
+		padding: 0px 20px 0px 20px;
+		}
+article img {
+		padding: 20px;
+		}
+.word  {text-indent: 30px;}     				/*文章中的文字段落*/
+.list-detail {
+		padding: 0px 0px 0px 40px;				/*文章中的项目列表*/
+		}  								
+.writer {font-size: 12px;}            			/*文章中的作者信息栏*/
+
+.picture {height: 800px;}			    		/*包含图片的一块*/		
+.picture img {height: 80px;
+			margin:10px;}
+.picture li {width: 140px;
+			height: 120px;
+			border: 1px solid #858A93;
+			margin: 10px 0px 10px 60px;}
+.picture li p {text-align: center;}
+article ol {margin-left: 60px;}
+
+
+
+.article-three {height: 400px;}         		/*包含表格的文章块类名，第三段*/
+.article-three ol li {
+		list-style-type: decimal;
+		}
+.article-three table,td,th {
+		border: 1px solid #BBB7B7;
+		}
+.article-three table {							/*调整文字中表格与左边框的距离*/
+		margin-left: 20px;
+		}
+.table-content {width: 500px;}      			/*包含表格的文章块的表格中的内容文字*/
+.table-action {width: 100px;}					/*包含表格的文章块的表格中的可以点击操作的部分内容*/
+.article-three table {
+			margin-top: 30px;
+			border-collapse:collapse;
+			}
+.article-three table th {
+		background: #3F4042;}	/* 表格表头行的背景颜色*/
+.sumtotal {background: #D6DCE9;}              	/* 表格求和行的背景颜色*/
+
+
+
+
+.aside {width: 1220px;							/*侧边栏的定位和大小设定*/
+		margin: 40px 40px 20px 20px;}
+
+.enroll {width: 1100px;
+		height: 460px;
+		border: 1px solid black;
+		margin: 0 auto;
+		font-size: 12px;
+		display: block;}
+.reForm {margin-left: 10px;     				/*注册列表第一步：周边距离-文字对齐（两个要素）-字体*/
+		text-align: center;
+		line-height: 100%;
+		font-size: 13px;}
+.regForm-item {
+		position: relative;  			/*注册列表第二步：dl文字抬头大框要相对定位，并且控制边距*/
+		padding: 10px;}
+
+.regForm-item-fun {
+		width: 100px;       			/*注册列表第三步：dt 输入的内容框绝对定位，并对齐*/
+		position: absolute;
+		left: 410px;
+		top: 13px;
+		text-align: right;
+		}
+
+#profile {height: 60px;							/*个人描述多行输入框的调整*/
+		position: absolute;
+		left: 520px;
+		color: black;
+		font-size: 18px;}
+.item-buttom-des {								/*最后的按钮的调整*/
+		width: 900px;
+		height: 50px;
+		border: 1px solid black;
+		margin-top: 50px;
+		font-size: 20px;
+		color: white;
+		border-radius: 5px;
+		background: #0F1092;
+		text-align: center;
+		}
+.suggestion {									/*输入框下面的两句提示语的调整*/
+		color: #BBB7B7;		
+		font-size: 12px;
+		margin-top: 10px;
+		}
+
+footer{ height: 56px;
+		background:black;
+		text-align: center;
+		padding-top: 15px;
+		color: white;}
+
+
+
+
+
+
