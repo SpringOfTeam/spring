@@ -1,0 +1,35 @@
+* {list-style: none;}
+
+#container {background: #eee;
+			overflow: auto;}          /*容器大小随内容增大*/
+
+div{margin: 20px;					
+	border-radius: 2px;
+	border: 1px solid #999;}
+
+.left {float: left;
+		width: 200px;
+		position: relative;}
+.left a {text-decoration:none;}
+a {position: absolute;
+	left: 110px;
+	top: 40px;
+   color: #F37F00;
+   font-size: 20px;}
+
+.right {float: right;
+		width: 120px;}		
+ul {margin: 0;						
+	padding: 0;}
+img a {display: block;}
+
+img {margin: 20px 20px 0px 20px;    /*图片之间的距离，如果之间设置会导致上下图片的距离变40px*/
+	width: 80px;
+	height: 80px;}
+.img-bottom {margin-bottom: 20px;}  /*补充由于上面的问题，有两张需要与下边保持距离*/
+
+
+.content {margin-left: 240px;		/*两边固定，中间自适应的关键处，是中间内容放在最后，如果放在中间就会成为下面的文档流，挡住右边块*/
+		margin-right: 160px;}
+h3,p {margin: 20px;}
+p {text-indent: 20px;}

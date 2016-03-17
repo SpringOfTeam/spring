@@ -1,0 +1,37 @@
+*{list-style: none;}
+
+#container { background: #eee; 
+			position: relative;
+			overflow: auto;
+			min-height: 580px;}    /*由于下面的问题存在，打补丁设置最低高度*/
+
+div {border: 1px solid #999;
+	margin: 20px;}
+
+.left {width: 200px;
+		position: absolute;
+		left: 0px;}
+.left a {text-decoration:none;}
+a {position: absolute;
+	left: 110px;
+	top: 40px;
+   color: #F37F00;
+   font-size: 20px;}
+
+
+.right {width: 120px;
+		position: absolute;
+		right: 0px;}               /*此处块的高度无法自适应让容器变高？目前不知道原因*/
+
+ul {margin: 0;
+	padding: 0;}
+img {width: 80px;
+	height: 80px;
+	margin: 20px 20px 0px 20px;}
+.img-bottom {margin-bottom: 20px;}
+
+
+.content {margin-left: 240px;
+		margin-right: 160px;}       
+h3,p {margin: 20px;}
+p {text-indent: 20px;}
