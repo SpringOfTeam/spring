@@ -1,9 +1,11 @@
-*{margin: 0;padding: 0;}
+*{
+		margin: 0;
+		padding: 0;}
 
-body {background: white;
-	position: relative;}
+body {	background: white;
+		position: relative;}
 
-.main {background: #ccc;
+.main {	background: #ccc;
 		width: 400px;
 		height: 200px;
 		position: absolute;
@@ -18,10 +20,12 @@ body {background: white;
 		height: 50px;
 }
 
-.leftcircle {border-radius: 0 0 50px 0 ;}
+.leftcircle {
+		border-radius: 0 0 50px 0 ;}
 
 
-.rightcircle {border-radius: 50px 0 0 0;
-			position: absolute;
-			right: 0px;
-			bottom: 0px;}
+.rightcircle {
+		border-radius: 50px 0 0 0;
+		position: absolute;
+		right: 0px;
+		bottom: 0px;}
