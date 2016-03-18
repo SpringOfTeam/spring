@@ -50,9 +50,9 @@
 */
 
 
-/*浮动布局*/
+/*浮动布局 浮动布局 浮动布局 浮动布局 浮动布局 浮动布局 浮动布局 浮动布局 浮动布局 浮动布局 浮动布局*/
 
-
+/*
 #all {
 	margin: 20px auto;
 	padding: 20px;
@@ -94,4 +94,60 @@ div {
     padding: 20px;
     font-size: 12px;
     line-height: 24px;
+}
+*/
+
+
+/*双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局*/
+#all {
+	margin: 20px auto;
+	padding: 20px;
+	overflow: hidden;
+	width: 95%;
+	border: 1px solid #999;
+	background-color: #eee;
+}
+
+#main {
+	float: left;
+	width: 100%;
+}
+
+#main #middle {
+	margin-left: 260px;
+	margin-right: 140px;
+	padding: 20px;
+	border: 1px solid #999;
+	background-color: #fff;
+	font-size: 14px;
+	line-height: 28px;
+}
+
+
+#left {
+	float: left;
+	width: 200px;
+    margin-left: -100%;
+    padding: 20px;
+    border: 1px solid #999;
+	background-color: #fff;
+}
+
+#left span {
+	vertical-align: top;
+	margin-left: 20px;
+}
+
+#right {
+	float: left;
+    margin-left: -122px;
+    text-align: center;
+    padding-top: 20px;
+	width: 120px;
+	border: 1px solid #999;
+	background-color: #fff;
+}
+
+#right img {
+	margin-bottom: 20px;
 }
