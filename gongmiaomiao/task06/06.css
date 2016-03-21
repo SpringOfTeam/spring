@@ -1,0 +1,336 @@
+*{		
+	margin: 0;
+	padding: 0;
+	list-style: none;}
+
+/*#container,header,footer,div {border: 1px solid black;}*/
+
+#container {
+	width: 980px;
+	height: 1386px;
+}
+
+header,footer,div {
+	width: 892px;
+	margin: 0 auto;
+}
+
+header {
+	height: 61px;
+}
+.web-address,header p{
+	font-size: 12px;
+	font-family: 'Microsoft SimHei';
+
+} 
+.web-address{
+	width: 110px;
+	height: 61px;
+	background: #E74C51;
+	float: left;
+}
+header p {
+	float: right;
+	color: #d45d5c;
+}
+.web-address p, header p{
+	margin-top: 45px;
+}
+.web-address p {
+	margin-right: 20px;
+	color: #ffffff;
+}
+
+
+.main {
+	height: 1265px;
+	border-top: 2px solid #938e8c;
+	border-bottom: 1px solid #938e8c;
+	font-size: 12px;
+	line-height: 16px;
+	color: #767777;
+}
+.content-one{								/*中间内容第一块*/
+	height: 506px;
+	margin: 34px 0px 70px 0px;
+}
+.one-left {                                 /*中间内容第一块左边*/
+	width: 641px;
+	height: 506px;
+	float: left;
+}
+.one-left-top {								/*中间内容第一块左边上面块图片*/
+	width: 641px;
+	height: 301px;
+	background: url('06top.jpg');
+}
+.transbox{
+	width: 191px;
+	height: 301px;
+	opacity: 0.4;
+}
+.boxone {background: green;             /*左右两边的不透明区域*/
+		float: left;}
+.boxtwo{background: red;
+		float: right;}
+
+.one-left-bottom{}							/*中间内容第一块左边下面块新闻内容*/
+
+.one-left-bottom h3 {
+	font-size: 16px;
+	text-decoration: underline;
+	font-family: "Microsoft YaHei" ;
+	font-weight: bold;
+	padding: 20px 0px 10px 0px;
+
+}
+.news-one{									/*中间内容第一块左边下面块新闻内容又分三小块，左中右*/
+	width: 230px;
+	height: 205px;
+	float: left;
+}
+.news-one h3 {
+	color: #418c59;
+}
+.news-two{
+	width: 200px;
+	height: 205px;
+	float: left;
+	margin: 0px 30px;
+}
+.news-two h3 {
+	color: #d2994f;
+}
+.news-three{
+	width: 150px;
+	height: 205px;
+	float: left;
+}
+.news-three h3 {
+	color: #cc7680;
+}
+.news-three p {
+	padding-bottom: 30px;
+}
+.news-three dl dd span {
+	color: #cd4a48;
+	font-family: "Microsoft YaHei" ;
+	opacity: 70%;
+	font-style: italic;
+}
+
+
+.one-right{								/*中间内容第一块右边*/
+	width: 203px;
+	height: 301px;
+	float: right;
+	border-top: 2px solid #cc8091;
+	font-family:  "Microsoft YaHei" ;
+}
+.one-right h3 {
+	font-size: 24px;
+	color: #000000;
+	text-decoration: underline;
+	line-height: 40px;
+
+}
+#num {												/*大大的700数组*/
+	font-size: 116px;
+	color: #75b86b;
+	font-style: italic;
+	padding-top: 75px;
+}
+
+#chapeter {											/*中间内容第一块右边最下面两行字*/
+	margin-top: 45px;
+	color: #cc8091;
+	padding-top: 10px;
+}
+
+#cha-one {
+	font-size: 55px;
+
+}
+#cha-two{
+	font-size: 21px;
+}
+#cha-three{
+	font-size: 12px;
+}
+
+
+
+.content-two {							/*中间内容第二块*/
+	height: 623px;
+	margin-bottom: 40px;
+}
+.two-left {
+	width: 415px;
+	height: 623px;
+	float: left;
+	text-align: justify;
+}
+#letter:first-letter {                /*中间内容第二块左边内容段落首字母下沉*/
+	font-size: 70px;
+	color: #f5e327;
+	font-family: "Microsoft YaHei" ;
+	float: left;
+	margin: 30px 10px 20px 0px;
+}
+.two-left-title{					/*中间内容第二块左边大标题*/
+	width: 415px;
+	height: 150px;
+	border-bottom: 2px solid #11456b;
+}
+.two-left-title h3,.two-left-title h4{
+	font-size: 42px;
+	line-height: 20px;
+	font-weight: bolder;
+	font-family: "Microsoft SimHei";
+	color: #11456b;
+	padding-top: 20px;
+}
+.two-left-title h4 {
+	font-size: 33px;
+}
+
+.two-left-title span{
+	font-size: 72px;
+	color: #f5e327;
+}
+#letter {padding-top: 10px;}		/*中间内容第二块左边内容段落第一段文字*/
+.p-ind{							/*中间内容第二块左边内容段落下面两段文字缩进*/
+	text-indent: 20px;
+}
+.two-left img {
+	width: 165px;
+	height: 290px;
+	float: right;
+	margin: 20px 0px 20px 20px;
+}
+
+
+.two-right {						 /*中间内容第二块右边内容*/
+	width: 458px;
+	height: 623px;
+	float: right;
+}
+.two-right-picture{								/*中间内容第二块右边内容上边图片加透明文字处理*/
+	width: 458px;
+	height: 275px;
+	margin-bottom: 30px;
+	background: url('06bottom-right.jpg');
+	position: relative;
+}
+.trans {
+	width: 458px;
+	height: 61px;
+	background: black;
+	opacity: 0.6;
+	position: absolute;
+	top: 211px;
+}
+
+.transp {
+	font-size: 26px;
+	color: #ffffff;
+	border-left: 3px solid #72b16a;
+	height: 44px;
+	margin-left: 40px;
+
+}
+.transp p {											
+	margin: 10px;
+	position: absolute;
+	top: 12%;
+}
+.transp p span {
+	font-size: 12px;
+	font-style: italic;
+	color: #72b16a;
+	word-spacing: 100%;
+}
+
+
+
+.two-right-comment{							/*中间内容第二块右边内容下边评论内容*/
+	width: 458px;
+	height: 318px;
+	font-size: 16px;
+	color: #5a5b5b;
+	font-family: "SimSun";
+	text-align: left;
+	line-height: 20px;
+	background: yellow;
+}
+.two-right-comment ol {
+	height: 158px;
+	line-height: 40px;
+	padding-left: 30px;
+}
+
+#li-first {
+	padding-top: 20px;
+}
+
+.two-right-comment ol li  span{
+	font-size: 12px;
+	font-style: italic;
+	text-align: right;
+}
+.two-right-comment-quote{
+	width: 458px;
+	position: relative;
+}
+.two-right-comment-quote-block{
+	width: 260px;
+	height: 160px;
+	position: absolute;
+	left: 0px;
+	bottom: -160px;
+	background: #E74C51;
+	color: white;
+}
+.num-0{
+	width: 70px;
+	position: absolute;
+	left: 0px;
+	top: 50%;
+	font-size: 116px;
+}
+.wenzi{
+	width: 180px;
+	position: absolute;
+	right: 0px;
+	top: 50%;
+	margin-top: -40px;
+	border-left: 2px solid;
+	padding-left: 5px;
+}
+.two-right-comment-quote #q {    				/*引用文字*/
+	width: 195px;
+	height: 160px;
+	position: absolute;
+	right: 0px;
+	bottom: -160px;
+	font-size: 14px;
+	text-align: justify;
+}
+.two-right-comment-quote #q  span{				/*引用文字的引用符号*/
+	font-size: 72px;
+	color: #d45d5c;
+	display: block;
+	padding-top: 30px;
+}
+
+
+footer {
+	height: 58px;
+}
+footer p {
+	font-size: 12px;
+	color: #d45d5c;
+	text-align: right;
+	padding-top: 5px;
+
+}
