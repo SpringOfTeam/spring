@@ -50,10 +50,9 @@ ul {
 	text-align: center;
 }
 
-#header .li01 {
+#header li:hover {
 	width: 60px;
 	height: 40px;
-	color: #e74f4d;
 	border-bottom: 4px solid #e74f4d;
 }
 
