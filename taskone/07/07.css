@@ -282,14 +282,22 @@ ul {
 /*以下是四个竖图*/
 
 #pic {
+	display: flex;
+	justify-content: center;
 	height: 600px;
 	background-color: #f8f8f8;
-	padding-left: 8%;
 }
 
-#pic .pic01,.pic02,.pic03,.pic04 {
+#pic .pic02,.pic03,.pic04 {
 	float: left;
 	margin: 100px 0 0 50px;
+    width: 219px;
+    height: 400px;
+}
+
+#pic .pic01 {
+	float: left;
+	margin: 100px 0 0 0px;
     width: 219px;
     height: 400px;
 }
@@ -478,6 +486,8 @@ ul {
 /*content04*/
 
 #content04 {
+	display: flex;
+	justify-content: center;
     height: 500px;
 }
 
