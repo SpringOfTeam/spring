@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE javaScript Task03</title>
+</head>
+<body>
+	<ul id="source">
+		<li><span>北京</span>空气质量:<b>90</b></li>
+		<li><span>上海</span>空气质量:<b>70</b></li>
+		<li><span>天津</span>空气质量:<b>80</b></li>
+		<li><span>广州</span>空气质量:<b>50</b></li>
+		<li><span>深圳</span>空气质量:<b>40</b></li>
+		<li><span>福州</span>空气质量:<b>32</b></li>
+		<li><span>成都</span>空气质量:<b>90</b></li>
+	</ul>
+
+	<ul id="resort"></ul>
+	<button id="sort-btn">排序</button>
+
+<script type="text/javascript">
+	function getData(){
+		var city = document.getElementById("source").getElementsByTagName("span");
+		var value = document.getElementById("source").getElementsByTagName("b");
+		var data = [];
+		for (var i = 0; i < city.length; i++) {
+			data.push([city[i].innerHTML,value[i].innerHTML]);
+		}
+		return data;
+	}
+
+	function sortAqiData(data){
+		data.sort(function(a,b){
+			var x = a[1];
+			var y = b[1];
+			return  y - x;
+		});
+		return data;        /*注意函数返回值，否则后面运行的函数内容为undefined*/
+	}
+
+	function render(data){
+		var text = "";
+		var i = 1;
+		for(var index = 0; index < data.length; index++){
+			text+="<li>" + "第" + getChineseText(i)+ "名：" + data[index][0] + "空气质量：" + "<b>" + data[index][1] + "</b></li>";
+			i++;
+		}
+		document.getElementById("resort").innerHTML = text;
+	}
+
+
+	function getChineseText(index){
+	switch(index){
+		case 1:return "一";break;
+		case 2:return "二";break;
+		case 3:return "三";break;
+		case 4:return "四";break;
+		case 5:return "五";break;
+		case 6:return "六";break;
+		case 7:return "七";break;
+	}
+	}
+		/*分部函数的结合*/
+	function btnHandle(){
+		var aqiData = getData();
+		aqiData = sortAqiData(aqiData);
+		render(aqiData);
+	}
+	function init(){
+		document.getElementById("sort-btn").addEventListener("click", btnHandle);
+	}
+
+	init();
+
+</script>
+
+</body>
+</html>
