@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE Task18</title>
+
+	<script type="text/javascript">
+	window.onload = function(){
+
+	var lefBtn = document.getElementById("lefIn");
+	//var inpValue = document.getElementById("ipt").value;
+	//var uL = document.getElementById("utar");
+	lefBtn.addEventListener("click", addL);
+	rigIn.addEventListener("click", addR);
+	lefOut.addEventListener("click",delL);
+	rigOut.addEventListener("click",delR );
+	}
+
+	function addL(){
+		var uL = document.getElementById("utar");
+		var numB = document.createElement("li");
+		var inpValue = document.getElementById("ipt").value;
+		numB.innerHTML = "<a onclick='del(this)'>"+inpValue+"</a>";
+		uL.insertBefore(numB, uL.childNodes[0]);
+	};
+
+	function addR(){
+		var uL = document.getElementById("utar");
+		var numB = document.createElement("li");
+		var inpValue = document.getElementById("ipt").value;
+		numB.innerHTML = "<a onclick='del(this)'>"+inpValue+"</a>";
+		uL.appendChild(numB);
+	};
+
+	function delL(){
+		var uL = document.getElementById("utar");
+		alert(uL.childNodes[0].childNodes[0].innerHTML);
+		uL.removeChild(uL.childNodes[0]);
+	};
+
+	function delR(){
+		var uL = document.getElementById("utar");
+		alert(uL.lastElementChild.lastChild.text);
+		uL.removeChild(uL.lastChild);
+	};
+
+	function del(obj){
+		obj.parentNode.parentNode.removeChild(obj.parentNode);
+	}
+
+
+	</script>
+
+
+
+
+	<style type="text/css">
+	*{
+		list-style: none;
+	}
+	ul{
+		padding: 0px;
+		margin: 0px;
+	}
+	li{
+		width: 30px;
+		height: 40px;
+		background-color: red;
+		display: inline-block;
+		line-height: 40px;
+		text-align: center;
+		color: white;
+		margin-top: 5px;
+		margin-left: 5px;
+	}
+	#lefOut{
+		margin-left: 20px;
+	}
+</style>
+</head>
+
+
+<body>
+<div class="main">
+	<input type="text" id="ipt" />
+	<button id="lefIn">左侧入</button>
+	<button id="rigIn">右侧入</button>
+	<button id="lefOut">左侧出</button>
+	<button id="rigOut">右侧出</button>
+	<ul id="utar">
+	</ul>
+</div>
+</body>
+</html>
