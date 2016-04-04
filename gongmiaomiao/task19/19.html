@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE Task19</title>
+
+	<script type="text/javascript">
+	window.onload = function(){
+
+	var lefBtn = document.getElementById("lefIn");
+	//var inpValue = document.getElementById("ipt").value;
+	//var uL = document.getElementById("utar");
+	lefBtn.addEventListener("click", addL);
+	rigIn.addEventListener("click", addR);
+	lefOut.addEventListener("click",delL);
+	rigOut.addEventListener("click",delR );
+	rank.addEventListener("click",arrFuc);
+	};	
+	var array = [];
+	function addL(){
+		var uL = document.getElementById("utar");
+		var numB = document.createElement("li");
+		var inpValue = document.getElementById("ipt").value;
+		var numBLen = document.getElementsByTagName("li").length;
+		if (numBLen < 10) {
+			if ( Number(inpValue)<100 && Number(inpValue)>= 10) {
+					numB.style.height = inpValue + "px";
+					uL.insertBefore(numB, uL.childNodes[0]);
+					array.push(inpValue);	
+			}else{
+				alert("your number is wrong!!!");
+			};			
+		}else{
+			alert("you can't input more!!!");	
+		};
+	};
+
+	function addR(){
+		var uL = document.getElementById("utar");
+		var numB = document.createElement("li");
+		var inpValue = document.getElementById("ipt").value;
+		var numBLen = document.getElementsByTagName("li").length;
+		if(numBLen < 10){
+			if (Number(inpValue)<100 && Number(inpValue)>= 10) {
+				numB.style.height =inpValue + "px";
+				uL.appendChild(numB);
+				array.push(inpValue);			
+			}else{
+				alert("your number is wrong!!!");			
+			}			
+		}else{
+			alert("you can't input more!!!");
+		}
+	};
+
+	function delL(){
+		var uL = document.getElementById("utar");
+		//alert(uL.childNodes[0].childNodes[0].innerHTML);
+		uL.removeChild(uL.childNodes[0]);
+		array.shift();
+	};
+
+	function delR(){
+		var uL = document.getElementById("utar");
+		//alert(uL.lastElementChild.lastChild.text);
+		uL.removeChild(uL.lastChild);
+		array.pop();
+	};
+	function arrFuc(){
+		var uL = document.getElementById("utar");
+		var temp = 0;
+		for(var i = 0; i < array.length; i++){
+			for(var j= 0; j < array.length - i; j++){
+				if (array[j] > array[j+1]) {
+					temp = array[j+1];
+					array[j+1] = array[j];
+					array[j] = temp;
+				}
+			}
+		};
+		for(var i= uL.childNodes.length-1; i >= 0; i--){
+			uL.removeChild(uL.childNodes[i]);
+		}
+		for(var i = 0; i < array.length; i++){
+			var numB = document.createElement("li");
+			numB.style.height =array[i] + "px";
+			uL.appendChild(numB);			
+		};
+	};
+	</script>
+
+
+
+
+	<style type="text/css">
+	*{
+		list-style: none;
+	}
+	ul{
+		padding: 0px;
+		margin: 0px;
+	}
+	li{
+		width: 30px;
+		background-color: red;
+		display: inline-block;
+		line-height: 40px;
+		text-align: center;
+		color: white;
+		margin-top: 5px;
+		margin-left: 5px;
+	}
+	#lefOut{
+		margin-left: 20px;
+	}
+</style>
+</head>
+
+
+<body>
+<div class="main">
+	<input type="text" id="ipt" />
+	<button id="lefIn">左侧入</button>
+	<button id="rigIn">右侧入</button>
+	<button id="lefOut">左侧出</button>
+	<button id="rigOut">右侧出</button>
+	<button id="rank">排序</button>
+	<ul id="utar">
+	</ul>
+</div>
+</body>
+</html>
