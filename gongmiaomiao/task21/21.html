@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE Task21</title>
+	<script type="text/javascript">
+	window.onload = function(){
+		var tagInf = document.getElementById("inp-tag");
+
+		var habb = document.getElementById("text-habbit");
+
+		var btnHabbit = document.getElementById("btn-habbit");
+
+
+		//var habb = document.getElementById("text-habbit");
+		//var habbitTagUl = document.getElementById("habbit-tag");
+		//var habbitLi = document.createElement("li");
+
+
+
+		tagInf.addEventListener("keyup",tagT);
+
+		//habb.addEventListener("keyup",textHabbit);
+		btnHabbit.addEventListener("click",textHabbit);
+
+	}
+	/**
+	*全局数组
+	*/
+	var tagInfArray = [];
+	/**
+	*输入的内容作为一个tag放在输入框下面
+	*13=ENTER,32==SPACE,188
+	*事件回调函数evt.target事件
+	*flag用来判断完for循环在做结果处理，不是处理一个加一个
+	*/
+	function tagT(evt){
+		var tagInf = document.getElementById("inp-tag");
+		var val = evt.target.value;
+		var uL = document.getElementById("ul-tag");
+		var uLi=document.createElement("li");
+		if(evt.keyCode==13||evt.keyCode==32){
+			var newArr = tagInfArray.slice(0);
+			var flag = true;
+			if (tagInfArray.length == 0) {
+				tagInfArray.push(val.trim());
+				uLi.innerHTML = val.trim();
+				uL.appendChild(uLi);
+				uLi.addEventListener("click",callBack);
+				uLi.addEventListener("mouseover",mousOverCall);
+				uLi.addEventListener("mouseout",mousOutCall);
+				evt.target.value= "";
+			}else{
+				for(var i=0; i < newArr.length; i++){
+					if(val.trim() != newArr[i]){
+						continue;
+						//tagInfArray.push(val.trim());
+					}else{
+						flag = false;
+						break;
+					}
+				}
+				if(flag){
+					<!--判断tag个数-->
+					if (tagInfArray.length < 5) {
+						tagInfArray.push(val.trim());
+						uLi.innerHTML = tagInfArray[tagInfArray.length-1];
+						uL.appendChild(uLi);
+						uLi.addEventListener("click",callBack);
+						uLi.addEventListener("mouseover",mousOverCall);
+						uLi.addEventListener("mouseout",mousOutCall);
+					}else{
+						tagInfArray.shift();
+						tagInfArray.push(val.trim());
+						uL.removeChild(uL.childNodes[0]);
+						uLi.innerHTML = tagInfArray[tagInfArray.length-1];
+						uL.appendChild(uLi);
+						uLi.addEventListener("click",callBack);
+						uLi.addEventListener("mouseover",mousOverCall);
+						uLi.addEventListener("mouseout",mousOutCall);
+					}
+					//tagInfArray.push(val.trim());
+					//uLi.innerHTML = tagInfArray[tagInfArray.length-1];
+					//uL.appendChild(uLi);
+				}
+				//uLi.innerHTML = tagInfArray[tagInfArray.length-1];
+				//uL.appendChild(uLi);
+				evt.target.value= "";
+			}
+		}else if(evt.keyCode==188){
+			var newArr = tagInfArray.slice(0);
+			var flag=true;
+			if (tagInfArray.length == 0) {
+				tagInfArray.push(val.substr(0,val.indexOf(",")).trim());
+				uLi.innerHTML = val.substr(0,val.indexOf(",")).trim();
+				uL.appendChild(uLi);
+				uLi.addEventListener("click",callBack);
+				uLi.addEventListener("mouseover",mousOverCall);
+				uLi.addEventListener("mouseout",mousOutCall);
+				evt.target.value= "";
+			}else{
+				for (var i = 0; i < newArr.length; i++) {
+					if (val.substr(0,val.indexOf(",")).trim() != newArr[i]) {
+						continue;
+						//alert(val.substr(0,val.indexOf(",")).trim() + "&" + newArr[i]);
+						//tagInfArray.push(val.substr(0,val.indexOf(",")).trim());
+					}else{
+						flag=false;
+						break;
+					}
+				}
+				if(flag){
+					if (tagInfArray.length < 5) {
+						tagInfArray.push(val.substr(0,val.indexOf(",")).trim());
+						uLi.innerHTML = tagInfArray[tagInfArray.length-1];
+						uL.appendChild(uLi);
+						uLi.addEventListener("click",callBack);
+						uLi.addEventListener("mouseover",mousOverCall);
+						uLi.addEventListener("mouseout",mousOutCall);
+					}else{
+						tagInfArray.shift();
+						tagInfArray.push(val.substr(0,val.indexOf(",")).trim());
+						uL.removeChild(uL.childNodes[0]);
+						uLi.innerHTML = tagInfArray[tagInfArray.length-1];
+						uL.appendChild(uLi);
+						uLi.addEventListener("click",callBack);
+						uLi.addEventListener("mouseover",mousOverCall);
+						uLi.addEventListener("mouseout",mousOutCall);
+					}
+					//tagInfArray.push(val.substr(0,val.indexOf(",")).trim());
+					//uLi.innerHTML = tagInfArray[tagInfArray.length-1];
+					//uL.appendChild(uLi);	
+				}	
+				evt.target.value= "";	
+		}
+		}
+	}
+
+	/**
+	*点击tag可删除
+	*/
+	function callBack(evt){
+		evt.target.parentNode.removeChild(evt.target);
+	}
+	/**
+	*当鼠标悬停在tag上时，tag前增加删除二字，
+	*/
+	function mousOverCall(evt){
+		//alert(evt.target.value);
+		evt.target.innerHTML = "删除" + evt.target.innerHTML;
+		evt.target.style.background = "red";
+		evt.target.removeEventListener("mouseover",mousOverCall);
+	}
+	/**
+	*鼠标松开，恢复
+	*/
+	function mousOutCall(evt){
+		evt.target.innerHTML = evt.target.innerHTML.replace("删除", "");
+		evt.target.style.background = "#3385FF";
+		evt.target.addEventListener("mouseover",mousOverCall);
+	}
+
+
+
+	/*textArea
+	*获取爱好的输入内容，创建标签
+	*
+	*/
+	//var habb = document.getElementById("text-habbit");
+	//var habbitTagUl = document.getElementById("habbit-tag");
+	//var habbitLi = document.createElement("li");
+
+	/**
+	*Textarea进行兴趣爱好的键盘输入,点击确认后输入栏为空
+	*/
+
+	var gloHabbArray = [];
+
+	function textHabbit(){
+		var habb = document.getElementById("text-habbit");
+		//var flag = true;
+		//var textVal = evt.target.value;
+		var habbVal = habb.value.trim();
+		var habbitTagUl = document.getElementById("habbit-tag");
+		var habbitLi = document.createElement("li");
+		//并用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为间隔
+		//是否可以封装函数，调用来更改间隔类型
+		var habbArray = habbVal.split(",");
+		//输入一次性内容去重
+		//alert(habbArray);
+		var habbUniq = [];
+		for(i in habbArray){
+			if(habbUniq.indexOf(habbArray[i]) === -1){
+				habbUniq.push(habbArray[i]);
+			}
+		}
+		//alert(habbUniq);
+		//前后多次输入去重
+		//alert(gloHabbArray);
+		if(gloHabbArray.length == 0){
+			for(var i=0; i < habbUniq.length; i++){
+				gloHabbArray.push(habbUniq[i]);
+				var habbitLi = document.createElement("li");
+				habbitLi.innerHTML = habbUniq[i];	
+				habbitTagUl.appendChild(habbitLi);				
+			}		
+		}else{
+			if (gloHabbArray.length < 5) {
+				for(var i=0; i < habbUniq.length; i++){
+					if(gloHabbArray.indexOf(habbUniq[i]) === -1){
+						if (gloHabbArray.length < 5) {
+							gloHabbArray.push(habbUniq[i]);
+							var habbitLi = document.createElement("li");
+							habbitLi.innerHTML = habbUniq[i];	
+							habbitTagUl.appendChild(habbitLi);
+						}else{
+							gloHabbArray.shift();
+							gloHabbArray.push(habbUniq[i]);
+							habbitTagUl.removeChild(habbitTagUl.childNodes[0]);
+							var habbitLi = document.createElement("li");
+							habbitLi.innerHTML = habbUniq[i];	
+							habbitTagUl.appendChild(habbitLi);
+						}
+					}
+				}
+			}else{
+				for(var i=0; i < habbUniq.length; i++){
+					if(gloHabbArray.indexOf(habbUniq[i]) === -1){
+						gloHabbArray.shift();
+						gloHabbArray.push(habbUniq[i]);
+						habbitTagUl.removeChild(habbitTagUl.childNodes[0]);
+						var habbitLi = document.createElement("li");
+						habbitLi.innerHTML = habbUniq[i];	
+						habbitTagUl.appendChild(habbitLi);
+					}
+				}				
+			}
+		}
+		habb.value = "";
+	};
+
+
+
+
+
+	</script>
+	<style type="text/css">
+	*{
+		list-style: none;
+	}
+	li{
+		height: 30px;
+		background-color: #3385FF;
+		color: white;
+		font-size: 20px;
+		line-height: 30px;
+		text-align: center;
+		display: inline-block;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		padding: 0 5px;
+	}
+
+	#habbit-tag li{
+		background-color: #FFCE82;
+	}
+	</style>
+
+</head>
+<body>
+
+<label>Tag:</label>
+<input id="inp-tag" type="text">
+<!--<button onclick="tagT()">输入</button>测试是否可以输入内容-->   
+<ul id="ul-tag"></ul>
+
+<textarea id="text-habbit"></textarea><br>
+<button id="btn-habbit">确认兴趣爱好</button>
+<ul id="habbit-tag"></ul>
+
+</body>
+</html>
