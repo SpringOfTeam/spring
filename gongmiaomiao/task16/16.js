@@ -20,8 +20,9 @@ function addAqiData(){
 	var cityVal = city.value.trim();
 	var numVal = num.value.trim();
 	if (/[\D]/.test(cityVal)&&/[\d]/.test(numVal)) {
-		aqiData.city = cityVal;
-		aqiData.num = numVal;
+		//aqiData.city = cityVal;
+		//aqiData.num = numVal;
+		aqiData[cityVal] = numVal;
 	}else{
 		alert("input imformation is wrong.");
 	}
@@ -31,6 +32,9 @@ function addAqiData(){
 *渲染aqi-table表格
 */
 function renderAqiList(){
+		var city = document.getElementById("aqi-city-input");
+	var num = document.getElementById("aqi-value-input");
+	var cityVal = city.value.trim();
 	var tableBody = document.getElementById("aqi-table");
 	var td1 = document.createElement("td");
 	var td2 = document.createElement("td");
@@ -39,8 +43,8 @@ function renderAqiList(){
 	//td3.onclick=delBtnHandle(this);
 	//td3.addEventListener("click",delBtnHandle(this));
 	var row = document.createElement("tr");
-	td1.innerHTML = aqiData.city;
-	td2.innerHTML = aqiData.num;
+	td1.innerHTML = cityVal;
+	td2.innerHTML = aqiData[cityVal];
 	td3.innerHTML = "<a onclick='delBtnHandle(this)'>删除</a>";
 
 

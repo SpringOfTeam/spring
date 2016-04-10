@@ -20,11 +20,13 @@
 
 <script type="text/javascript">
 	function getData(){
-		var city = document.getElementById("source").getElementsByTagName("span");
-		var value = document.getElementById("source").getElementsByTagName("b");
+		var liInner = document.getElementsByTagName("li");
+		var liLeng = liInner.length;
 		var data = [];
-		for (var i = 0; i < city.length; i++) {
-			data.push([city[i].innerHTML,value[i].innerHTML]);
+		for (var i = 0; i < liLeng; i++){
+			var liHtml = liInner[i].innerText;
+			var arrItem = liHtml.split("空气质量:");
+			data.push(arrItem);
 		}
 		return data;
 	}

@@ -1,5 +1,4 @@
-<!DOCTYPE <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
 	<title>IFE javaScript Task 02</title>
@@ -24,25 +23,27 @@ aqiData.sort(function(a,b){
 	var y = b[1];
 	return y - x;
 });
+
 function goodCity(){
 	var index;
-	var text = "";
-	var i = 1;
 	for (index = 0; index < aqiData.length; index++){
 			if (aqiData[index][1] > 60){
-					text += "<li>" + "第" + getChineseText(i) + "名：" + aqiData[index] + "</li>";
-					i+=1;
+				var addU = document.getElementById("aqi-list");
+				var addL = document.createElement("li");
+				addL.innerHTML = "第" + getChineseText(index+1) + "名：" + aqiData[index][0] + "," + aqiData[index][1];
+				addU.appendChild(addL);
 			}
 	}
-	document.getElementById("aqi-list").innerHTML = text;
-}
+};
+
 function getChineseText(index){
 	switch(index){
 		case 1:return "一";break;
 		case 2:return "二";break;
 		case 3:return "三";break;
 	}
-}
+};
+
 </script>
 </body>
 </html>
