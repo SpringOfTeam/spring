@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE Task23</title>
+
+	<style type="text/css">
+	div{
+		border: 1px solid black;
+		width: 80%;
+		height: 50%;
+	}
+	.root{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;	
+		padding-right: 210px;
+	}
+	.item1,.item2,.item3{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding: 10px;	
+		margin-right: 5px;
+	}
+	.item4{
+		width: 40px;
+		height: 20px;
+	}
+	.phone{
+		padding: 30px;
+	}
+	</style>
+
+	<script type="text/javascript">
+	window.onload = function(){
+		var btnClic = document.getElementById("btnRecursive");
+		var btnQuery = document.getElementById("btnSearch");
+		btnClic.addEventListener("click",Run);
+		btnQuery.addEventListener("click",Query);
+	}
+	/*公共数组存储遍历数据*/
+	stack = [];
+
+	/*遍历过程函数*/
+	function Recursive(node){
+		/*if(node.hasChildNodes()){
+			var chil = node.childNodes;
+			for(var i = 0; i < chil.length; i++){
+				if(chil[i].nodeType == 1){
+					stack.push(chil[i]);
+					Recursive(chil[i]);	
+				}
+			}
+		}else{
+			stack.push(node);
+		}*/
+		if(node==null){
+			return;
+		}
+
+		stack.push(node);
+
+		for(var i=0;i<node.children.length;i++){
+			Recursive(node.children[i]);
+		}
+	}
+
+	/*动画过程*/
+	function Run(evt){
+		var root = document.getElementById("root");
+		if(evt.target.id == "btnRecursive"){
+			Recursive(root);
+		}
+
+		var i = 0;
+		var interval;
+		var speed;
+		var selBtn = document.getElementById("sel");
+		if(selBtn.selectedIndex == 0){
+			speed = 500;
+		}else if(selBtn.selectedIndex == 1){
+			speed = 1000;
+		}else if(selBtn.selectedIndex == 2){
+			speed = 2000;
+		}
+
+		interval=setInterval(function(){
+			if( i < stack.length){
+				for(var index = 0; index < i; index++){
+					stack[index].style.backgroundColor = "";
+				}
+				stack[i].style.backgroundColor = "yellow";
+				i++;
+			}else {
+				stack[i-1].style.backgroundColor = "";
+				clearInterval(interval);
+			}
+		},speed)
+	}
+
+	/*查找过程
+	*输入值与stack的htmlText匹配
+	*/
+	function Query(){
+		var root = document.getElementById("root");
+		Recursive(root);
+
+
+		var i = 0;
+		var interval;
+		var speed;
+		var selBtn = document.getElementById("sel");
+		var inpText = document.getElementById("inp");
+		if(selBtn.selectedIndex == 0){
+			speed = 500;
+		}else if(selBtn.selectedIndex == 1){
+			speed = 1000;
+		}else if(selBtn.selectedIndex == 2){
+			speed = 2000;
+		}
+
+		interval=setInterval(function(){
+			if( i < stack.length){
+				for(var index = 0; index < i; index++){
+					stack[index].style.backgroundColor = "";
+				}
+				//if (stack[i].firstChild) {}
+				stack[i].style.backgroundColor = "yellow";
+				//i++;
+				if (stack[i].innerHTML == inpText.value) {
+					clearInterval(interval);
+					return;
+				}
+				i++;
+			}else {
+				stack[i-1].style.backgroundColor = "";
+				clearInterval(interval);
+				alert("wrong input!!!!");
+			}
+		},speed)		
+	}
+
+	</script>
+</head>
+<body>
+<button id="btnRecursive">深度遍历</button>
+<select id="sel">
+	<option>快</option>
+	<option>中</option>
+	<option>慢</option>
+</select>
+<input type="text" id="inp"></input>
+<button id="btnSearch">查找</button>
+
+<div class="root" id="root">Super
+	<div class="item1">thing
+		<div class="item2">apple
+			<div class="item3">pear</div>
+			<div class="item3">pig</div>
+			<div class="item3">cola</div>
+			<div class="item3">soccer</div>
+		</div>
+		<div class="item2 phone">phone</div>
+		<div class="item2">plus
+			<div class="item3">book</div>
+			<div class="item3">school</div>
+		</div>
+	</div>
+	<div class="item1">note
+		<div class="item2">human
+			<div class="item3">code</div>
+			<div class="item3">operate</div>
+			<div class="item3">man</div>
+		</div>
+		<div class="item2">program
+			<div class="item3">bement
+				<div class="item4">cat</div>
+			</div>
+			<div class="item3">glass</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
