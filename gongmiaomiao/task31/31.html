@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE Task31</title>
+	<style type="text/css">
+	select,span{
+		display: none;
+	}
+	</style>
+
+	<script type="text/javascript">
+		window.onload=function(){
+			var student = document.getElementById("students");
+			var worker = document.getElementById("worker");
+
+			var radios = document.querySelectorAll("input[type=radio]");
+			
+			function changeHandler(evt){
+				if(this.id == "students"){
+					workerMiss();
+					firstCity();				
+				}else if(this.id == "worker"){
+					schoolMiss();
+					workerInformation();	
+				}
+			}			
+
+			Array.prototype.forEach.call(radios, function(radio){
+				radio.addEventListener("change",changeHandler);
+			});
+
+		}
+
+		/*城市改变，待选学校跟着改变*/
+		function schoolUpdate(event){
+			var cityUl = document.getElementById('city');
+			var schoolUl = document.getElementById("school");
+			/*获取数据*/
+			var citySchool = {
+				北京:["北京大学", "清华大学"],
+				上海:["复旦大学", "同济大学"]
+			}
+			/*从对象中获取城市*/
+			var citySchoolKey = Object.keys(citySchool);
+			/*获取城市*/
+			//var cityVal = document.createElement("option");
+			//cityVal.innerHTML = citySchoolKey[c];
+			//cityUl.appendChild(cityVal);			
+			for(c in citySchoolKey){
+			/*需求一：城市改变，待选学校跟着改变*/
+				if (event.target.value == citySchoolKey[c]) {
+					var schoolArr = citySchool[citySchoolKey[c]];
+
+					/*清除之前的学校选择*/
+					while(schoolUl.hasChildNodes()){
+						schoolUl.removeChild(schoolUl.lastChild);
+					}
+					/*加载最新的学校选择*/
+					for(s in schoolArr){
+						var schoolVal = document.createElement("option");
+						schoolVal.innerHTML = schoolArr[s];
+						schoolUl.appendChild(schoolVal);
+					}
+				}
+			}			
+		}
+
+		/*如果调用学校首先加载的学校内容*/
+		function firstCity(){
+			var cityUl = document.getElementById('city');
+			var schoolUl = document.getElementById("school");
+
+			var shoolSpan = document.getElementById("titleSch");
+			shoolSpan.style.display = "inline-block";
+			cityUl.style.display = "inline-block";
+			schoolUl.style.display = "inline-block";
+			/*获取数据*/
+			var citySchool = {
+				北京:["北京大学", "清华大学"],
+				上海:["复旦大学", "同济大学"]
+			}
+
+			
+			/*从对象中获取城市*/
+			var citySchoolKey = Object.keys(citySchool);
+			/*获取已经取得的城市记录*/
+			var cityRecord = citySchoolKey;
+
+			/*清除之前的城市选择*/
+			while(cityUl.hasChildNodes()){
+				cityUl.removeChild(cityUl.lastChild);
+			}
+
+			for(c in citySchoolKey){
+				var cityVal = document.createElement("option");
+				cityVal.innerHTML = citySchoolKey[c];
+				cityUl.appendChild(cityVal);
+
+				/*需求一：城市改变，待选学校跟着改变*/
+				if (cityUl.selectedIndex == c) {
+					var schoolArr = citySchool[citySchoolKey[c]];
+
+					/*清除之前的学校选择*/
+					while(schoolUl.hasChildNodes()){
+						schoolUl.removeChild(schoolUl.lastChild);
+					}
+					for(s in schoolArr){
+						var schoolVal = document.createElement("option");
+						schoolVal.innerHTML = schoolArr[s];
+						schoolUl.appendChild(schoolVal);
+					}
+				}
+			}
+		}
+
+
+		/*调用非在校显示的内容函数*/
+		function workerInformation(){
+			var companySpan = document.getElementById("titleComp");
+			var companyDet = document.getElementById("company");
+				companySpan.style.display = "inline-block";
+				companyDet.style.display = "inline-block";
+		}
+
+		/*公司内容消失*/
+		function workerMiss(){
+			var companySpan = document.getElementById("titleComp");
+			var companyDet = document.getElementById("company");
+			companySpan.style.display = "none";
+			companyDet.style.display = "none";			
+		}
+
+		/*学校内容消失*/
+		function schoolMiss(){
+			var cityUl = document.getElementById('city');
+			var schoolUl = document.getElementById("school");
+			var shoolSpan = document.getElementById("titleSch");
+			shoolSpan.style.display = "none";
+			cityUl.style.display = "none";
+			schoolUl.style.display = "none";			
+		}
+
+
+	</script>
+</head>
+<body>
+	<form>
+		<label for="students">在校生</label>
+		<input  id="students" type="radio" name="identity" value="students">
+		<label for="worker">非在校生</label>
+		<input  id="worker" type="radio" name="identity" value="worker"><br>
+
+		<span id="titleSch">学校</span>
+		<select id="city" onchange="schoolUpdate(event)">
+
+			<!--<option>北京</option>-->
+		</select>
+		<select id="school">
+			<!--<option>北京大学</option>
+			<option>清华大学</option>-->
+		</select><br>
+
+		<span id="titleComp">请选择工作单位</span>
+		<select id="company">
+			<option>中石化</option>
+			<option>中石油</option>
+		</select>
+
+	</form>
+
+</body>
+</html>

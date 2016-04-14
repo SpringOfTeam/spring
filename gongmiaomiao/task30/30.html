@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE Task30</title>
+	<style type="text/css">
+	label{
+		display: inline-block;
+		width: 150px;
+		text-align: right;
+		padding-right: 20px;
+		font-weight: bold;
+	}
+	input{
+		width: 500px;
+		height: 50px;
+		margin-bottom: 15px;
+		border-radius: 4px;
+		border-style: solid;
+		border-color: #CDCDCD;
+	}
+	button{
+		width: 80px;
+		height: 50px;
+		background-color: blue;
+		font-size: 20px;
+		color: white;
+		border:none;
+		margin-left: 590px;
+		border-radius: 4px;
+	}
+	p{
+		margin-left: 170px;
+		color: #CDCDCD;
+		margin-bottom: 15px;
+		margin-top: 0px;
+		display: none;
+	}
+	</style>
+
+	<script type="text/javascript">
+	/*
+	function checkName(){
+		var textBox;
+		var newLength = 0;
+		for(var i = 0; i <borderChange.value.length; i++){
+			if (borderChange.value.charCodeAt(i) >= 10000) {
+				newLength+= 2;
+			}else{
+				newLength+= 1;
+			}
+		}	
+
+		return newLength;
+
+	} 
+
+	function checkPassword2(pwd1,pwd2){
+		return pwd1==pwd2;
+	}
+
+	function checkEmail(email){
+		var emailAt = inputGet[3].value.indexOf("@");
+				var emailDot = inputGet[3].value.lastIndexOf(".");
+				if(emailAt > 0 && emailDot - emailAt > 1){
+					inputGet[3].style.borderColor = "green";
+					pGet[3].innerHTML = "邮箱输入正确";
+					pGet[3].style.color = "green";						
+				}else{
+					inputGet[3].style.borderColor = "red";
+					pGet[3].innerHTML = "邮箱输入错误";
+					pGet[3].style.color = "red";						
+				}	
+	}*/
+
+
+
+
+
+		window.onload = function(){
+			var inputGet = document.getElementsByTagName("input");
+			var btnSubmit = document.getElementById("btn");
+
+			for(var i = 0; i < inputGet.length; i++){
+				inputGet[i].addEventListener("focus", tipsShow);
+				inputGet[i].addEventListener("blur", check);
+
+			}
+			btnSubmit.addEventListener("click",gloCheck);
+		}
+
+		/*表单获得焦点时，下方显示表单填写规则*/
+		function tipsShow(evt){
+			var pGet = document.getElementsByTagName("p");
+			var inputGet = document.getElementsByTagName("input");
+
+			for(var i = 0; i < inputGet.length; i++){
+				if (evt.target == inputGet[i]) {
+					lab = pGet[i];
+				}
+			}
+			lab.style.display = "block";
+		}
+
+		/*表单失去焦点时校验表单内容验证前两项*/
+		function check(evt){
+			var inputGet = document.getElementsByTagName("input");
+			var pGet = document.getElementsByTagName("p");
+			var labelGet = document.getElementsByTagName("label");
+			//var emailAt = inputGet[3].innerHTML.indexOf("@");
+			//var emailDot = inputGet[3].innerHTML.lastIndexOf(".");
+
+			/*通过回调函数获取点击的输入框*/
+			/*确认名称和密码*/
+			if (evt.target == inputGet[0] || evt.target == inputGet[1]) {
+				if(evt.target == inputGet[0]){
+					var borderChange = inputGet[0];
+					var pChange = pGet[0];
+					var labChange = labelGet[0].innerHTML;
+				}else if (evt.target == inputGet[1]){
+					var borderChange = inputGet[1];
+					var pChange = pGet[1];
+					var labChange = labelGet[1].innerHTML;
+				}
+					/*确认名称和密码判断字符输入长度*/
+			var newLength = 0;
+			for(var i = 0; i <borderChange.value.length; i++){
+				if (borderChange.value.charCodeAt(i) >= 10000) {
+					newLength+= 2;
+				}else{
+					newLength+= 1;
+				}
+			}
+
+			/*确认名称和密码根据输入正确与否来改变样式*/
+			if (newLength == null || newLength == "") {
+				borderChange.style.borderColor = "red";
+				pChange.innerHTML = labChange + "输入不能为空";
+				pChange.style.color = "red";				
+			}
+			else if(newLength > 4 && newLength < 16){
+				borderChange.style.borderColor = "green";
+				pChange.innerHTML = labChange + "输入格式正确";
+				pChange.style.color = "green";				
+			}else{
+				borderChange.style.borderColor  = "red";
+				pChange.innerHTML = labChange + "输入格式不正确";
+				pChange.style.color = "red";				
+			}				
+
+			/*确认密码是否正确*/
+			}else if(evt.target == inputGet[2]){
+				var labChange = labelGet[1].innerHTML;
+				if(pGet[1].innerHTML == labChange + "输入格式正确" && inputGet[1].innerHTML ==inputGet[2].innerHTML){
+					inputGet[2].style.borderColor = "green";
+					pGet[2].innerHTML = "密码输入格式一致";
+					pGet[2].style.color = "green";					
+				}else{
+					inputGet[2].style.borderColor = "red";
+					pGet[2].innerHTML = "密码输入有误";
+					pGet[2].style.color = "red";						
+				}
+			/*验证邮箱输入是否符合格式*/	
+			}else if(evt.target == inputGet[3]){
+				var emailAt = inputGet[3].value.indexOf("@");
+				var emailDot = inputGet[3].value.lastIndexOf(".");
+				if(emailAt > 0 && emailDot - emailAt > 1){
+					inputGet[3].style.borderColor = "green";
+					pGet[3].innerHTML = "邮箱输入正确";
+					pGet[3].style.color = "green";						
+				}else{
+					inputGet[3].style.borderColor = "red";
+					pGet[3].innerHTML = "邮箱输入错误";
+					pGet[3].style.color = "red";						
+				}
+			/*判断手机号13位数字*/
+			}else if(evt.target == inputGet[4]){
+				var number = inputGet[4].value;
+				var pattern = /\d\d\d\d\d\d\d\d\d\d\d/g;
+				if(pattern.test(number)){
+					inputGet[4].style.borderColor = "green";
+					pGet[4].innerHTML = "手机号输入正确";
+					pGet[4].style.color = "green";					
+				}else{
+					inputGet[4].style.borderColor = "red";
+					pGet[4].innerHTML = "手机号输入错误";
+					pGet[4].style.color = "red";					
+				}
+			}					
+
+		}
+
+		/*点击提交按钮时，对页面中所有输入进行校验*/
+		function gloCheck(){
+			var inputGet = document.getElementsByTagName("input");
+			var pGet = document.getElementsByTagName("p");
+			var labelGet = document.getElementsByTagName("label");
+			/*判断名称密码根据输入*/
+			for(var i = 0; i < inputGet.length; i++){
+				if( i == 0){
+					var borderChange = inputGet[0];
+					var pChange = pGet[0];
+					var labChange = labelGet[0].innerHTML;
+
+					var newLength = 0;
+					for(var j = 0; j <borderChange.value.length; j++){
+						if (borderChange.value.charCodeAt(i) >= 10000) {
+							newLength+= 2;
+						}else{
+							newLength+= 1;
+						}
+					}					
+					/*确认名称和密码根据输入正确与否来改变样式*/
+					if (newLength == null || newLength == "") {
+						borderChange.style.borderColor = "red";
+						pChange.innerHTML = labChange + "输入不能为空";
+						pChange.style.color = "red";				
+					}
+					else if(newLength > 4 && newLength < 16){
+						borderChange.style.borderColor = "green";
+						pChange.innerHTML = labChange + "输入格式正确";
+						pChange.style.color = "green";				
+					}else{
+						borderChange.style.borderColor  = "red";
+						pChange.innerHTML = labChange + "输入格式不正确";
+						pChange.style.color = "red";				
+					}
+				}else if(i == 1){
+					var borderChange = inputGet[1];
+					var pChange = pGet[1];
+					var labChange = labelGet[1].innerHTML;
+					var newLength = 0;
+					for(var j = 0; j <borderChange.value.length; j++){
+						if (borderChange.value.charCodeAt(i) >= 10000) {
+							newLength+= 2;
+						}else{
+							newLength+= 1;
+						}
+					}		
+					/*确认名称和密码根据输入正确与否来改变样式*/
+					if (newLength == null || newLength == "") {
+						borderChange.style.borderColor = "red";
+						pChange.innerHTML = labChange + "输入不能为空";
+						pChange.style.color = "red";				
+					}
+					else if(newLength > 4 && newLength < 16){
+						borderChange.style.borderColor = "green";
+						pChange.innerHTML = labChange + "输入格式正确";
+						pChange.style.color = "green";				
+					}else{
+						borderChange.style.borderColor  = "red";
+						pChange.innerHTML = labChange + "输入格式不正确";
+						pChange.style.color = "red";				
+					}
+				}else if( i == 2){
+					var labChange = labelGet[1].innerHTML;
+					if(pGet[1].innerHTML == labChange + "输入格式正确" && inputGet[1].innerHTML ==inputGet[2].innerHTML){
+						inputGet[2].style.borderColor = "green";
+						pGet[2].innerHTML = "密码输入格式一致";
+						pGet[2].style.color = "green";					
+					}else{
+						inputGet[2].style.borderColor = "red";
+						pGet[2].innerHTML = "密码输入有误";
+						pGet[2].style.color = "red";
+					}				
+				}else if( i == 3){
+					var emailAt = inputGet[3].value.indexOf("@");
+					var emailDot = inputGet[3].value.lastIndexOf(".");
+					if(emailAt > 0 && emailDot - emailAt > 1){
+						inputGet[3].style.borderColor = "green";
+						pGet[3].innerHTML = "邮箱输入正确";
+						pGet[3].style.color = "green";						
+					}else{
+						inputGet[3].style.borderColor = "red";
+						pGet[3].innerHTML = "邮箱输入错误";
+						pGet[3].style.color = "red";						
+					}
+
+				}else if( i == 4){
+					var number = Number(inputGet[4].value);
+					var pattern = /\d{11}/g;
+					if(pattern.test(number)){
+						inputGet[4].style.borderColor = "green";
+						pGet[4].innerHTML = "手机号输入正确";
+						pGet[4].style.color = "green";					
+					}else{
+						inputGet[4].style.borderColor = "red";
+						pGet[4].innerHTML = "手机号输入错误";
+						pGet[4].style.color = "red";					
+					}
+				}
+
+			}
+			//alert(pGet[1].innerHTML == labChange + "输入格式正确");
+			//alert(number);
+			//alert(pattern.test(number));
+			//alert(inputGet[1].innerHTML ==inputGet[2].innerHTML);
+
+			
+			/*此处有问题*//*此处有问题*//*此处有问题*/
+
+			if(pGet[0].style.color == "rgb(0, 128, 0)" &&pGet[1].style.color == "rgb(0, 128, 0)"&&pGet[2].style.color == "rgb(0, 128, 0)"&&pGet[3].style.color == "rgb(0, 128, 0)"&&pGet[4].style.color == "rgb(0, 128, 0)"){
+				alert("输入正确！");
+			}else{
+				alert("输入有误！");
+			}
+			
+
+		}
+
+
+
+	</script>
+</head>
+<body>
+<form>
+	<label>名称</label>
+	<input type="text"></input><br>
+	<p>必填，长度为4~16个字符</p>
+	<label>密码</label>
+	<input type="password"></input><br>
+	<p>必填，长度为4~16个字符</p>
+	<label>密码确认</label>
+	<input type="password"></input><br>
+	<p>必填，长度为4~16个字符，与密码相同</p>
+	<label>邮箱</label>
+	<input type="text"></input><br>
+	<p>必填，符合邮箱格式要求</p>
+	<label>手机</label>
+	<input type="text"></input><br>
+	<p>必填，长度为11为数字</p>
+	<button type="button" id="btn">提交</button>
+</form>
+
+</body>
+</html>
