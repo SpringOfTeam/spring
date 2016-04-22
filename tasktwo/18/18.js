@@ -39,7 +39,7 @@ leftOut.onclick = function () {
 
 rightOut.onclick = function() {
 	if (ul.hasChildNodes()) {
-		alert(ul.firstChild.innerHTML);
+		alert(ul.lastChild.innerHTML);
 		ul.removeChild(ul.lastChild);
 	}else {
 		alert("队列为空");
