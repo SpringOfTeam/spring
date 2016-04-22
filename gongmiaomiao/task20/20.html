@@ -1,27 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>IFE Task20</title>
-	<script type="text/javascript">
-
-	function query(){
-		var information = document.getElementById('inp-content');
-		var inforArray = information.value.split(",");
-		var search = document.getElementById('inp-query').value;
-
-		var patt = new RegExp(search, "ig");
-		for(var i= 0; i < inforArray.length; i++){
-			result = inforArray[i].match(patt);
-			if(result){
-				var str=information.value;	
-				document.getElementById("demo").innerHTML =str.replace(inforArray[i],"<font color=red>"+inforArray[i]+"</font>");					
-			};
-		};
-	};
-
-	</script>
-
 	<style type="text/css">
 	input[type="textarea"]{
 		width: 500px;
@@ -46,7 +27,7 @@
 		margin-top: 10px;
 		position: relative;
 	}
-	button{
+	#btn-query{
 		width: 50px;
 		height: 32px;
 		background-color: #E54724;
@@ -57,24 +38,30 @@
 		position: absolute;
 		margin-left: 10px;
 	}
+	li{
+		background-color: red;
+		color: white;
+		display: inline-block;
+		margin-right: 10px;
+	}
 
 	</style>
 </head>
 <body>
 
-<textarea id="inp-content">
+<textarea id="text-quene" rows="6" cols="80">
+	中国 Ameriacn English
 </textarea>
-<p>允许一次批量输入多个内容，<br>
-格式可以为数组,中文，英文等，<br>
-间隔可以是回车，逗号，顿号，空格等</p>
-
-<p id="demo"></p>
-
+<p>允许一次批量输入多个内容，<br>格式可以为数组,中文，英文等，<br>间隔可以是回车，逗号，顿号，空格等</p>
+<button id="lefIn">左侧入</button>
+<button id="rigIn">右侧入</button>
+<button id="lefOut">左侧出</button>
+<button id="rigOut">右侧出</button>
+<ul id="quene"></ul>
 <div>
 	<input id="inp-query" type="text">
-	<button id="btn-query" onclick="query()">查询</button>	
+	<button id="btn-query">查询</button>	
 </div>
-
-
+<script type="text/javascript" src="20.js"></script>
 </body>
 </html>
