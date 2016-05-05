@@ -1,0 +1,284 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IFE Task34</title>
+	<script type="text/javascript" src="34.js"></script>
+</head>
+<script type="text/javascript">
+
+
+window.onload = function(){
+
+	var bt = document.getElementById("btn");
+	//var inOder = document.getElementById("inp").value;
+	bt.addEventListener("click", function(){
+		var inOder = document.getElementById("inp").value;
+		switch (inOder){
+			case "MOV LEF":
+				var MOVLEF = new Dot("changeleft","moveleft",1);
+				MOVLEF.action();
+				break;
+			case "MOV TOP":
+				var MOVTOP = new Dot("changetop","movetop",1);
+				MOVTOP.action();
+				break;
+			case "MOV RIG":
+				var MOVRIG = new Dot("changeright","moveright",1);
+				MOVRIG.action();
+				break;
+			case "MOV BOT":
+				var MOVBOT = new Dot("changebot","movebot",1);
+				MOVBOT.action();
+				break;
+			case "TRA LEF":
+				var TRALEF = new Dot("no","moveleft",1);
+				TRALEF.action();
+				break;
+			case "TRA TOP":
+				var TRATOP = new Dot("no","movetop",1);
+				TRATOP.action();
+				break;
+			case "TRA RIG":
+				var TRARIG = new Dot("no","moveright",1);
+				TRARIG.action();
+				break;
+			case "TRA BOT":
+				var TRABOT = new Dot("no","movebot",1);
+				TRABOT.action();
+				break;
+			case "TUN LEF":
+				var TUNLEF = new Dot("changeleft","no",0);
+				TUNLEF.action();
+				break;
+			case "TUN RIG":
+				var TUNRIG = new Dot("changeright","no",0);
+				TUNLEF.action();
+				break;
+			case "TUN TOP":
+				var TUNTOP = new Dot("changetop","no",0);
+				TUNTOP.action();
+				break;
+			case "TUN BOT":
+				var TUNBOT = new Dot("changebot","no",0);
+				TUNBOT.action();
+				break;
+			case "GO":
+				var GO = new Dot("no","no",2);
+				GO.action();
+				break;
+		}
+	});
+		
+}
+
+</script>
+<style type="text/css">
+	*{
+		border: 0;
+		margin: 0;
+	}
+	body{
+		position: relative;
+	}
+	table{
+		border-collapse: collapse;
+	}
+	td{
+		border: 1px solid red;
+		width: 40px;
+		height: 40px;
+		padding: 0px;
+	}
+	.rowNum{
+		width: 10px;
+		text-align: right;
+		border-top: none;
+		border-left: none;
+		border-bottom: none;
+		padding-right: 10px;
+	}
+	.borderTop{
+		border-top: 2px solid black;
+	}
+	.borderLeft{
+		border-left: 2px solid black;
+	}
+	.borderBot{
+		border-bottom: 2px solid black;
+	}
+	.borderRig{
+		border-right:  2px solid black;
+	}
+	div#dot{
+		width: 40px;
+		height: 30px;
+		background-color: red;
+		border-top: 10px solid blue;
+		/*position: absolute;*/
+
+	}
+	input[type="text"]{
+		border: 1px solid red;
+		margin-left: 22px;
+		margin-top: 10px;
+	}
+</style>
+<body>
+
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>1</th>
+			<th>2</th>
+			<th>3</th>
+			<th>4</th>
+			<th>5</th>
+			<th>6</th>
+			<th>7</th>
+			<th>8</th>
+			<th>9</th>
+			<th>10</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="rowNum">1</td>
+			<td class="borderTop borderLeft"></td>
+			<td class="borderTop"></td>
+			<td class="borderTop"></td>
+			<td class="borderTop"></td>
+			<td class="borderTop"></td>
+			<td class="borderTop"></td>
+			<td class="borderTop"></td>
+			<td class="borderTop"></td>
+			<td class="borderTop"></td>
+			<td class="borderTop borderRig"></td>
+		</tr>
+		<tr>
+			<td class="rowNum">2</td>
+			<td class="borderLeft"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class="borderRig"></td>
+		</tr>
+		<tr>
+			<td class="rowNum">3</td>
+			<td class="borderLeft"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class="borderRig"></td>
+		</tr>
+		<tr>
+			<td class="rowNum">4</td>		
+			<td class="borderLeft"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class="borderRig"></td>
+		</tr>
+		<tr>
+			<td class="rowNum">5</td>
+			<td class="borderLeft"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class="borderRig"></td>
+		</tr>
+		<tr>
+			<td class="rowNum">6</td>
+			<td class="borderLeft"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class="borderRig"></td>
+		</tr>
+		<tr>
+			<td class="rowNum">7</td>
+			<td class="borderLeft"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class="borderRig"></td>
+		</tr>
+		<tr>
+			<td class="rowNum">8</td>
+			<td class="borderLeft"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class="borderRig"></td>
+		</tr>
+		<tr>
+			<td class="rowNum">9</td>
+			<td class="borderLeft"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td class="borderRig"></td>
+		</tr>
+		<tr>
+			<td class="rowNum">10</td>
+			<td class="borderLeft borderBot"></td>
+			<td class="borderBot"></td>
+			<td class="borderBot"></td>
+			<td class="borderBot"></td>
+			<td class="borderBot"></td>
+			<td class="borderBot"></td>
+			<td class="borderBot"></td>
+			<td class="borderBot"></td>
+			<td class="borderBot"></td>
+			<td class="borderBot borderRig"></td>
+		</tr>	
+	</tbody>
+</table>
+<div id="dot" style="position: absolute;left: 110px;top: 100px;"></div>
+<form>
+	<input id="inp" type="text" name="order">
+	<button id="btn" type="button">执行</button>
+</form>
+</body>
+</html>
