@@ -1,0 +1,89 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    background-color: #eeeeed;
+}
+
+img,button,input{ 
+    border: none; 
+} 
+input{
+    font-family:"SimHei","Microsoft Yahei","Arial";
+}
+
+a {
+	text-decoration: none;
+}
+
+.clearfix:after{
+    content:"";
+    display: block;
+    clear:both;
+}
+/*header*/
+#header {
+	width: 100%;
+	height: 56px;
+	background-color: #2189bf;
+}
+
+.inHeader {
+	width: 1193px;
+	margin: 0 auto;
+	padding-right: 87px;
+}
+
+.logo {
+    float: left;
+    padding:10px 0 0 50px;
+}
+
+.searchbar {
+	float: right;
+	padding-top: 14px;
+}
+
+.searchbar input {
+    width:273px;
+    height:28px;
+    line-height: 28px;
+    border-radius:14px;
+    outline: none;
+    padding-left: 40px;
+    background:#fff url(images/search.png) no-repeat 17px 6px;
+    
+}
+
+.searchbar a {
+	display: inline-block;
+	height: 28px;
+	line-height: 28px;
+    color: #fff;
+    font-size: 12px;
+    margin: 0 20px;
+    padding-left: 20px;
+    background:url(images/login.png) no-repeat 0 6px;
+}
+
+/*content*/
+#section {
+    width: 1280px;
+    height: 1000px;
+    margin: 0 auto;
+}
+
+.aside {
+	float: left;
+    width: 20%;
+    height: 1000px;
+    background-color: #2a2e3d;
+}
+
+.wrap {
+	float: right;
+    width: 80%;
+    height: 1000px;
+}
